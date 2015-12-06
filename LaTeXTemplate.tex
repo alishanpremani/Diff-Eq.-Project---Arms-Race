@@ -150,7 +150,7 @@
 								% what happens.
 
 
-\author{Jonathan Ledesma, Alishan Premani, Khoa Nguyen}					% The author
+\author{Jonathan Ledesma, Khoa Nguyen, Alishan Premani}					% The author
 
 
 \date{\today}				% This date-stamps your paper automatically. If you want to 
@@ -179,8 +179,8 @@ We define the following variables:
 \begin{itemize}
 \item $x(t) \ge 0$ is the amount of weaponry that country X has at time $t$,
 \item $y(t) \ge 0$ is the amount of weaponry that country Y has at time $t$,
-\item $a \ge 0$ is the coefficient of weapon production of country X,
-\item $b \ge 0$ is the coefficient of weapon production of country Y.
+\item $a \ge 0$ is the coefficient of new weapon production of country X,
+\item $b \ge 0$ is the coefficient of new weapon production of country Y.
 \end{itemize}
 We restrict this model to a specific time interval in which $a$ and $b$ stay constant, even though in a real-world situation, the production rates might fluctuate.
 
@@ -189,13 +189,13 @@ We restrict this model to a specific time interval in which $a$ and $b$ stay con
 
 %Alishan
 \section{A More Realistic Model}
-Now we consider the situation when both countries decide to update their inventory of weaponry due to new technological advances and old weapons being expired. 
+Now we consider the situation where both countries decide to update their inventory of weaponry due to new technological advances and expired old weapons. 
 Therefore, we define additional parameters in the differential equations:
 \begin{align}
 \frac{dx}{dt} & = ay - cx \\
 \frac{dy}{dt} & = bx - dy
 \end{align}	
-where $c \ge 0$ and $d \ge 0$ are constant coefficients of the destruction of old weapons in countries X and Y, respectively. \\
+where $c \ge 0$ and $d \ge 0$ are constant coefficients of the destruction of expired weapons in countries X and Y, respectively. \\
 We can solve this system of differential equations by constructing a coefficient matrix:
 \[
 M=
