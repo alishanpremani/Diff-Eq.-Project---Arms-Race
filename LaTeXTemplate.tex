@@ -192,11 +192,27 @@ We restrict this model to a specific time interval in which $a$ and $b$ stay con
 Now we consider the situation where both countries decide to update their inventory of weaponry due to new technological advances and expired old weapons. 
 Therefore, we define additional parameters in the differential equations:
 \begin{align}
-\frac{dx}{dt} & = ay - cx \\
-\frac{dy}{dt} & = bx - dy
+\frac{dx}{dt} & = ay - cx \label{eq:changeInX} \\
+\frac{dy}{dt} & = bx - dy \label{eq:changeInY}
 \end{align}	
+where $c \ge 0$ and $d \ge 0$ are constant coefficients of the destruction of old weapons in countries X and Y, respectively. \\
+We can solve this system of differential equations by constructing a coefficient matrix $M$ from equations \eqref{eq:changeInX} and \eqref{eq:changeInY} as follows
+\[
+\bold{Y}(t) = 
+ \begin{bmatrix}
+	dx/dt \\ dy/dt
+ \end{bmatrix}
+= \begin{bmatrix}
+    -c & a\\ 
+    b & d
+  \end{bmatrix}
+  \begin{bmatrix}
+    x \\ y
+  \end{bmatrix},
+  \]
 where $c \ge 0$ and $d \ge 0$ are constant coefficients of the destruction of expired weapons in countries X and Y, respectively. \\
 We can solve this system of differential equations by constructing a coefficient matrix:
+
 \[
 M=
   \begin{bmatrix}
@@ -204,21 +220,45 @@ M=
     b & -d
   \end{bmatrix}.
 \]
+
 Our characteristic polynomial is $\lambda^2 + (c+d)\lambda + cd - ab$. Computing the eigenvalues and eigenvectors yield
 $$\lambda_1 = -\frac{1}{2}d - \frac{1}{2}c + \frac{1}{2}\sqrt{4ab -2cd + c^2 + d^2}; \quad \vec{v}_1 = 
-\begin{bmatrix}
+	\begin{bmatrix}
 	\frac{a}{\lambda_1}\\
 	1
-\end{bmatrix} $$
-
-$$\lambda_2 = -\frac{1}{2}d - \frac{1}{2}c - \frac{1}{2}\sqrt{4ab -2cd + c^2 + d^2}; \quad \vec{v}_2 = 
-\begin{bmatrix}
+	\end{bmatrix}$$
+	
+$$\lambda_2 = -\frac{1}{2}d - \frac{1}{2}c - \frac{1}{2}\sqrt{4ab -2cd + c^2 + d^2}, \quad \vec{v}_2 = 
+	\begin{bmatrix}
 	\frac{a}{\lambda_2}\\
 	1
-\end{bmatrix} $$
+	\end{bmatrix}$$	
+
+We now discuss the different possible cases which can occur during the arms race in terms by using the above eigenvalues.
+\subsection{Case 1 - Two Real Distinct Eigenvalues}
+
+We rewrite the equation for $\lambda$ as follows
+	\begin{align} \label{lambda}
+	\lambda & = -\frac{1}{2}(d + c) \pm \frac{1}{2}\sqrt{4ab -2cd + c^2 + d^2}
+	\end{align}
+To have two real distinct eigenvalues, we need the discriminant in equation \eqref{lambda} to be greater than zero
+	\begin{align} \label{discGreaterThanZero}
+	4ab -2cd + c^2 + d^2 & > 0,
+	\end{align}
+which implies that $4ab + c^2 + d^2 > 2cd$. 
+
+Note that $c^2 +d^2 > 2cd$ only when $c\ne d$. 
+
+	
+
+\subsection{Case 2 - Repeated Eigenvalues}
+\subsection{Case 2 - Complex Eigenvalues}
+
+
+
 
 \section{Case Study: Cold War}
-We consider the arm race between the United States and the USSR during the Cold War. Due to limited time and resources, we define ``weaponry" in this case to only include warheads. We also exclude other external factors such as internal political conflicts in each country, current wars at the time, and treaties.
+We consider the arm race between the United States and the USSR during the Cold War. Due to limited time and resources, we define the term ``weaponry" in this case to only include nuclear warheads. We also exclude other external factors such as internal political conflicts in each country, current wars at the time, and treaties, that would effect the production rate of weaponry in each country.
 
 
 \section{Reference}
