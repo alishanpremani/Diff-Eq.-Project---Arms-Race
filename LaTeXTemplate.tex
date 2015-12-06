@@ -138,17 +138,18 @@
 
 % Now we begin the BODY OF YOUR DOCUMENT:
 
+
 \begin{document}	% All LaTeX files contain the command ''\begin{document}''. 
 				% There is a corresponding ''\end{document}'' command
 				% at the end.
 
 % Next we'll give basic titling information to LaTeX:
 
-\title{A Sample \LaTeX ~Document}		% The title of the document.
+\title{MODELING THE ARMS RACE}		% The title of the document.
 								% The ~ symbol forces a space; try removing it to see 
 								% what happens.
 
-\author{Alishan}					% The author
+\author{Khoa \\ Jonathan \\ Alishan}					% The author
 
 \date{\today}				% This date-stamps your paper automatically. If you want to 
 						% specify a fixed date, you may do so between the braces.
@@ -159,183 +160,14 @@
 \maketitle		% This command creates the appropriate header. It may alternatively
 			% create a title page. This will depend on whether you have selected  
  			% ''report'', ''book", or ''article'' in the ''\documentclass'' command above.
+			
+%pull, add commit, push
 
-\section{Some Typesetting Commands}		% The ''\section'' command tells LaTeX
-									% to begin a new section. There will be
-									% a header titled "Some Typesetting 
-									% Commands". There are also the 
-									% commands ''\subsection'' and 
-									% ''\subsubsection''. These commands 
-									% are used in a similar manner.
-									
-%\section*{Some Typesetting Commands}	% Alternatively, there is the ''\section*''
-									% command. This is just like the ''\section''
-									% command, but LaTeX will not create 
-									% any number for the section. There are
-									% also * versions of the ''\subsection''
-									 % and ''\subsubsection'' commands.
+\section{KHOA NGUYEN}
 
-See the \emph{Introduction to \LaTeX} for further information on entering text into \LaTeX.
-I would now like to quote Lewis Carroll\footnote{From \emph{Through
-the Looking Glass}.}:
-\begin{quote}
-``A slow sort of country!'' said the Queen.
-``Now, \emph{here}, you see, it takes all the running \emph{you} can do, to keep in the same place.
-If you want to get somewhere else, you must run twice as fast as that!''
-\end{quote}
+\section{ALISHAN PREMANI}
 
-% Hopefully it is clear what the ''\footnote'' command does.
-% One wonderful thing about LaTeX is that it takes care of the numbering and placement of footnotes automatically.
-% If you add a footnote later on, LaTeX will renumber all of them.
+\section{JONATHAN LEDESMA}		
 
-% Pay close attention to how you tell LaTeX to include beginning quotation marks: use `` rather than ".
-%(The ` symbol is found in the upper left corner of the keyboard.)
-
-% What follows is a new paragraph.
-% LaTeX knows this because we have left at least one blank line between it and the preceding paragraph.
-% LaTeX will thus indent the start of the following text:
-
-Now I would like to demonstrate some different type styles:
-\textrm{Roman}, \textit{Italic}, \textbf{Bold}, \textsl{Slanted}, \textsc{Small Caps},
-\texttt{Typewriter}, and \textsf{San Serif}.
-
-% The ''\emph'' command is not an italics command.
-% It instead stands for ''emphasis''. 
-% This will italicize text in most typical situations, but it can do other things depending on context.
-% The commands `''\textrm'', ''\textit'', etc. are more explicit ways of changing type styles.
-
-%Notice in the above sentence that even though the source file has a line break after the colon, the LaTeXed document does not.
-%To start a new line in the document without starting a new paragraph, put ''\\'' at the end of the line.
-
-
-Here is an example \\
-of a new line without starting a new paragraph.
-
-
-
-And now a list:
-\begin{itemize}
-	\item Canada
-	\item United States
-	\item Mexico
-\end{itemize}
-
-And another list:
-\begin{enumerate}
-	\item United Kingdom
-	\item China
-	\item Russia
-	\item France
-\end{enumerate}
-
-% The command ''itemize'' creates a list with bullets.
-%The command ''enumerate'' creates a numbered list.
-%Notice how LaTeX automatically does the numbering.
-%You can embed lists within lists.
-%The indentation above is not necessary, but it makes the lists easier to read in the source file.
-
-Finally, some examples of special characters:
-\begin{quote}
-We drove down La Ca\~{n}ada Drive to watch Wagnerian opera.
-The role of Br\"{u}nnhilde was played by Ren\'{e}e Gossens.
-Later we went to a restaurant called ``La Meurtri\`{e}re'' and were served r\^{o}ti by a rude gar\c{c}on.
-\end{quote}
-
-\section{Tables}
-
-Here is a one-inch space followed by a sample table:
-
-\vspace{1.0in}		% The ''\vspace'' command causes LaTeX to leave some vertical 
-				% space (in this case, 1 inch of space). You can use this command
-				% to leave space for illustrations or diagrams which are to be  
-				% pasted into the document manually, or simply to control spacing.
-				% Use this command sparingly. Let LaTeX do the spacing work for you.
-
-\begin{tabular}{|l|r|}	% The ''\begin{tabular}'' command begins a table. There is a 
-				% corresponding ''\end{tabular}'' command after the table. 
-				% The ''{|l|r|}'' after the ''\begin{tabular}'' command is, unfortunately,
-				% difficult to decipher here. It consists of the letters ''l'' (el) and ''r''
-				% and vertical bars in this order: bar, el, bar, r, bar. This indicates
-				% that the table will have two columns, the first one flushed left,
-				% the second one flushed right. (The letter ''c'' would indicate a 
-				% centered column.) The bars indicates that there will be vertical
-				% lines preceding and following each column.
-                                            
-\hline	% The command ''\hline'' indicates a horizontal line in the table.
-                                            
-\textbf{Original} & \textbf{Pig Latin} \\		% The start of each column after the first is 
-								% indicated by a ''&'' character. The end of 
-								% the row is indicated by typing ''\\''.
-\hline
-\hline
-Cat & Atcay \\
-Dog & Ogday \\
-Trash & Ashtray \\
-\hline
-\end{tabular}		% The end of the table.
-
-\section{And Now Some Mathematics}
-
-Mathematical expressions, like $x^{2} + 3$, are easy to create in \LaTeX.
-It is also easy to have a formula written on a separate line, like
-\[x^{2} + 3 = 0.\]
-
-% Mathematical expressions must be contained in a pair of single dollar signs ''$ ... $'' or ''\[ ... \]''.
-%A pair of single dollar signs keeps the math in the same line as the text.
-%To place the math centered, on its own line with larger symbols, surround it by ''\[''' and "\]".
-%This is called display style.
-
-\noindent Numbered equations are easy too!
-\begin{equation}
-x^{5} - 9x^{4} = \sin 3.
-\end{equation}
-You can also refer to previous equations.
-The formula
-\begin{equation}
-x = \frac{-b \pm \sqrt{b^{2} - 4ac}}{2a} \label{yourlabel}
-\end{equation}
-is the quadratic formula.
-You can use Equation \ref{yourlabel} to solve quadratic equations.
-
-% Notice that you can also place equations and formulas between the commands 
-% ''\begin{equation}'' and ''\end{equation}''. No dollar signs are necessary in this case. 
-
-% You can also create a label for the equation using the command ''\label''. You can 
-% refer back to the equation using the ''\ref'' command. Notice how LaTeX 
-% automatically takes care of the numbering. When you use the ''\ref'' command, you 
-% will need to run LaTeX on the source file twice. This is necessary so that LaTeX 
-% can keep track of the numbering. (Note that LaTeX will complain a little bit the first 
-% time you run the source file through. This is not serious.)
-
-Here is a formula with some simple mathematical operations:
-\[5 \times 3 + 4 \div 2 = 2 \cdot 10 - 3 < 100.\]
-Another simple formula:
-\[x^{2} \geq 0.\]			% The command ''\geq'' is ''greater than or equal'' and 
-					% ''\leq'' is ''less than or equal''.				
-This formula is true for $x \in \mathbb{R}$.	% The command ''\mathbb'' specifies 
-									% a certain type of math font. There are 
-									% also the ''\mathbf'' (bold) and the 
-									% ''\mathcal'' (calligraphic) commands, 
-									% among others, for specifying font styles 
-									% in math formulas.
-One more simple formula:
-\[0 \neq \frac{\pi}{2}.\]
-Some simple trigonometry:
-\[\sin(2x) = 2 \sin x \cos x.\]
-Some simple logarithms:
-\[\log(x) = \frac{\ln x}{\ln 10}.\]
-And now some Greek letters:
-\[\alpha + \beta = \gamma.\]
-A formula involving set notation:
-\[A \cup (B \cap C) = (A \cup B) \cap (A \cup C).\]
-The derivative:
-\[\lim_{h \rightarrow 0}\frac{f(x + h) - f(x)}{h} = f'(x).\]
-The Riemann sum
-\[\sum_{i = 1}^{n}f(x_{i})\Delta x\]
-approximates the integral
-\[\int_{a}^{b}f(x)\;dx.\]			% The characters ``\;'' just place some additional space 
-						% in the formula.
-Finally, an infinite series:
-\[1, \frac{1}{2}, \frac{1}{4}, \dots.\]
 
 \end{document}                          % This command indicates the end of the file.
