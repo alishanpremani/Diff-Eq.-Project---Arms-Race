@@ -110,15 +110,15 @@
 % They will not be loaded due to the ''%'' characters at the beginning of the lines.
 %  To use these packages, delete the ''%'' characters.
 
-%\usepackage{graphicx}
+\usepackage{graphicx}
 
-%\usepackage{setspace}		% The ``setspace'' package contains new 
+\usepackage{setspace}		% The ``setspace'' package contains new 
 						% commands that will facilitate doublespacing 
 						% a document. Make sure that you have the file 
  						% ''setspace.sty'' contained in the same folder as 
 						% the source file.
                                         
-%\doublespacing			% The ''\doublespacing'' command is available only if
+\doublespacing			% The ''\doublespacing'' command is available only if
 						% ''\usepackage{setspace}'' is in the document. This 
 						% causes the document to be double-spaced (surprise!).
                                         
@@ -129,7 +129,7 @@
 % ''\baselinestretch{2}'' or ''\baselinestretch{1.5}'' in your document. In some
 % situations though, this produces bad results.
 
-%\usepackage[top=1in,bottom=1in,left=1.25in,right=1in]{geometry}	   % The ``geometry" package
+\usepackage[top=1in,bottom=1in,left=1in,right=1in]{geometry}	   % The ``geometry" package
 					% allows you to specify the margins of the document. For example, the
 					% options indicated in the square brackets set all margins except the left 
 					% to 1" and the left margin at 1.25".
@@ -165,11 +165,43 @@
 			
 %pull, add commit, push
 
-\section{KHOA NGUYEN}
+% Khoa
+\section{Assumptions}
+We define the following variables:
+\begin{itemize}
+\item $x(t) \ge 0$ is the amount of weaponry that country X has at time $t$,
+\item $y(t) \ge 0$ is the amount of weaponry that country Y has at time $t$,
+\item $a \ge 0$ is the coefficient of weapon production of country X,
+\item $b \ge 0$ is the coefficient of weapon production of country Y.
+\end{itemize}
+We restrict this model to a specific time interval in which $a$ and $b$ stay constant, even though in a real-world situation, the production rates might fluctuate.
 
-\section{ALISHAN PREMANI}
+%JONATHAN LEDESMA
+\section{Simple Model}		
 
-\section{JONATHAN LEDESMA}		
+%Alishan
+\section{A More Realistic Model}
+Now we consider the situation when both countries decide to update their inventory of weaponry due to new technological advances and old weapons being expired. 
+Therefore, we define additional parameters in the differential equations:
+\begin{align}
+\frac{dx}{dt} & = ay - cx \\
+\frac{dy}{dt} & = bx - dy
+\end{align}	
+where $c \ge 0$ and $d \ge 0$ are constant coefficients of the destruction of old weapons in countries X and Y, respectively. \\
+We can solve this system of differential equations by constructing a coefficient matrix:
+\[
+M=
+  \begin{bmatrix}
+    -c & a\\ 
+    b & d
+  \end{bmatrix}.
+\]
+Our characteristic polynomial is $\lambda^2 + (d+c)\lambda + cd - ab$. Computing the eigenvalues and eigenvectors yield
+$$\lambda_1 = -\frac{1}{2}d - \frac{1}{2}c + \frac{1}{2}
+
+\section{Case Study ?}
+Due to limited time and resources, we define ``weaponry" in this case to only include fighting planes and their associated weapons such as bombs and missiles.
+
 
 
 \end{document}                          % This command indicates the end of the file.
