@@ -197,11 +197,24 @@ M=
   \end{bmatrix}.
 \]
 Our characteristic polynomial is $\lambda^2 + (d+c)\lambda + cd - ab$. Computing the eigenvalues and eigenvectors yield
-$$\lambda_1 = -\frac{1}{2}d - \frac{1}{2}c + \frac{1}{2}
+$$\lambda_1 = -\frac{1}{2}d - \frac{1}{2}c + \frac{1}{2}\sqrt{4ab -2cd + c^2 + d^2}; \quad \vec{v}_1 = 
+\begin{bmatrix}
+	\frac{a}{\lambda_1}\\
+	1
+\end{bmatrix} $$
 
-\section{Case Study ?}
-Due to limited time and resources, we define ``weaponry" in this case to only include fighting planes and their associated weapons such as bombs and missiles.
+$$\lambda_2 = -\frac{1}{2}d - \frac{1}{2}c - \frac{1}{2}\sqrt{4ab -2cd + c^2 + d^2}; \quad \vec{v}_2 = 
+\begin{bmatrix}
+	\frac{a}{\lambda_2}\\
+	1
+\end{bmatrix} $$
 
+\section{Case Study: Cold War}
+We consider the arm race between the United States and the USSR during the Cold War. Due to limited time and resources, we define ``weaponry" in this case to only include warheads. We also exclude other external factors such as internal political conflicts in each country, current wars at the time, and treaties.
+
+
+\section{Reference}
+%https://lupucezar.files.wordpress.com/2011/02/yuan.pdf
 
 
 \end{document}                          % This command indicates the end of the file.
