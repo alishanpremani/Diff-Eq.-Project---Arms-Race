@@ -1,0 +1,341 @@
+% This is a LaTeX source file with extensive commentary for learning LaTeX.
+% It is a modified version of a file due to Dr. Kevin P. Lee, now at Chicago's Simeon Career Academy High School.
+
+% You can used this file as a LaTeX template.
+%Copy this file and make any adaptations which you need.
+%Consult a LaTeX guide for further information about TeX and LaTeX.
+
+% The Very Basics:
+
+%	1. Anything on a line after the character ''%'' appears in red and is ignored 
+%		by LaTeX. Thus you can delete any line beginning with ''%" and nothing about the output
+%		will change (although these comments are often very helpful).
+
+%	2. The backslash "\" precedes commands.
+
+%	3. Command arguments are enclosed by braces "{}".
+
+%	4. All LaTex source files (this is a source file; it has the suffix .tex) begin with 
+%		the line \documentclass{"class"}, where "class" specifies a particular
+%		type of formatting.
+
+%	5. There are two main parts of a source file:
+%		a) Everything after \documentclass but before \begin{document} is
+%			called the "preamble" -- it defines properties of your document.
+
+%		b) The text of your document occurs between the commands
+%			\begin{document} and the very last command \end{document}.
+
+
+\documentclass{article}	% This tells LaTeX to format the content into the style of an article.
+                                        
+%\documentclass[11pt]{article}		% You can include some options within the 
+							% square brackets. These options will affect 
+                                        			% the formatting of the entire document. The
+                                      			% option here selects for a type size of
+                                        			% 11 points. This line is currently ignored
+                                       			% by LaTeX. To use this option, add a "%" at
+							% the beginning of the other \documentclass
+							% command and delete the ''%'' at the
+							% beginning of this line. Similar instructions
+							% apply to each of the following lines.
+
+%\documentclass[12pt]{article}          % You can also select a type size of 12 points.
+
+%\documentclass[legalpaper]{article}	% This causes the output to be formatted
+								% onto a legal-sized document.
+
+%\documentclass[landscape]{article}	% This causes the output to be formatted
+								% ''sideways''.
+
+%\documentclass[twocolumn]{article}	% You can specify two columns on each page.
+
+%\documentclass[leqno]{article}	% The ''leqno'' option specifies that equation 
+                                        			% numbers will be placed on the left instead of 
+                                        			% the right.
+
+%\documentclass[fleqn]{article}         % Instead of centering displayed formulas,
+							% formulas will be aligned on the left.
+
+%\documentclass{report}			% This line will cause the content to be formatted 
+							% into a report. The report class is better for 
+							% longer documents.
+                                        
+%\documentclass{book}			% The book class is best for very long documents.
+
+% You can combine various document options and classes. For instance, suppose that
+% you want a book written in 12 point typeface, two columns, and with equations
+% aligned on the left. Then you should specify:
+
+%\documentclass[12pt,twocolumn,fleqn]{book}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Now we begin the PREAMBLE:
+
+% The \usepackage command will read additional files which will either affect the
+% formatting of the entire document or allow you to use additional commands. 
+% Some files are standard. Others can be downloaded from the web. Typically,
+% these extra files will end in the suffix ''.sty''. So the command
+% ''\usepackage{example}'' will cause LaTeX to read the file ''example.sty''.
+
+% These next several \usepackage commands will cause LaTeX to use different fonts.
+% Notice that all of these lines will be ignored by LaTeX unless you delete one of
+% the  ''%'' characters at the beginning of a line.
+
+%\usepackage{times}	% The package ''times'' will cause LaTeX to use the
+					% Times font throughout most of your document.
+
+%\usepackage{palatino}		% Use Palatino.
+%\usepackage{bookman}		% Use Bookman.
+%\usepackage{newcent}		% Use New Century Schoolbook.
+%\usepackage{garamond}	% Use Garamond.
+
+% These next few commands will allow you to use some additional mathematical
+% typesetting commands.
+
+\usepackage{amsmath}		% The ''amsmath'' package will allow you to use useful 
+						% commands contained within the AMS-LaTeX package.
+						% (AMS is the American Mathematical Society.)
+					
+\usepackage{amssymb}		% The ''amssymb'' package will allow you to use 
+						% additional mathematical symbols.
+						
+\usepackage{amsthm}		% The ''amsthm'' package contains commands
+						% for formatting mathematical theorems and 
+						% statements.
+
+% These next packages allow you to include graphics within a LaTeX document.
+% Please read the available documentation before trying to use these packages.
+% They will not be loaded due to the ''%'' characters at the beginning of the lines.
+%  To use these packages, delete the ''%'' characters.
+
+%\usepackage{graphicx}
+
+%\usepackage{setspace}		% The ``setspace'' package contains new 
+						% commands that will facilitate doublespacing 
+						% a document. Make sure that you have the file 
+ 						% ''setspace.sty'' contained in the same folder as 
+						% the source file.
+                                        
+%\doublespacing			% The ''\doublespacing'' command is available only if
+						% ''\usepackage{setspace}'' is in the document. This 
+						% causes the document to be double-spaced (surprise!).
+                                        
+%\onehalfspacing			% Alternatively, one can use ''\onehalfspacing'' with 
+						% the ''setspace'' package.
+
+% If you do not want to use the ''setspace'' package, you could use the command
+% ''\baselinestretch{2}'' or ''\baselinestretch{1.5}'' in your document. In some
+% situations though, this produces bad results.
+
+%\usepackage[top=1in,bottom=1in,left=1.25in,right=1in]{geometry}	   % The ``geometry" package
+					% allows you to specify the margins of the document. For example, the
+					% options indicated in the square brackets set all margins except the left 
+					% to 1" and the left margin at 1.25".
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Now we begin the BODY OF YOUR DOCUMENT:
+
+\begin{document}	% All LaTeX files contain the command ''\begin{document}''. 
+				% There is a corresponding ''\end{document}'' command
+				% at the end.
+
+% Next we'll give basic titling information to LaTeX:
+
+\title{A Sample \LaTeX ~Document}		% The title of the document.
+								% The ~ symbol forces a space; try removing it to see 
+								% what happens.
+
+\author{Jane Doe}					% The author
+
+\date{\today}				% This date-stamps your paper automatically. If you want to 
+						% specify a fixed date, you may do so between the braces.
+						% If you don't want a date to appear, type ''\date{}''.
+
+% Creating the title section:
+
+\maketitle		% This command creates the appropriate header. It may alternatively
+			% create a title page. This will depend on whether you have selected  
+ 			% ''report'', ''book", or ''article'' in the ''\documentclass'' command above.
+
+\section{Some Typesetting Commands}		% The ''\section'' command tells LaTeX
+									% to begin a new section. There will be
+									% a header titled "Some Typesetting 
+									% Commands". There are also the 
+									% commands ''\subsection'' and 
+									% ''\subsubsection''. These commands 
+									% are used in a similar manner.
+									
+%\section*{Some Typesetting Commands}	% Alternatively, there is the ''\section*''
+									% command. This is just like the ''\section''
+									% command, but LaTeX will not create 
+									% any number for the section. There are
+									% also * versions of the ''\subsection''
+									 % and ''\subsubsection'' commands.
+
+See the \emph{Introduction to \LaTeX} for further information on entering text into \LaTeX.
+I would now like to quote Lewis Carroll\footnote{From \emph{Through
+the Looking Glass}.}:
+\begin{quote}
+``A slow sort of country!'' said the Queen.
+``Now, \emph{here}, you see, it takes all the running \emph{you} can do, to keep in the same place.
+If you want to get somewhere else, you must run twice as fast as that!''
+\end{quote}
+
+% Hopefully it is clear what the ''\footnote'' command does.
+% One wonderful thing about LaTeX is that it takes care of the numbering and placement of footnotes automatically.
+% If you add a footnote later on, LaTeX will renumber all of them.
+
+% Pay close attention to how you tell LaTeX to include beginning quotation marks: use `` rather than ".
+%(The ` symbol is found in the upper left corner of the keyboard.)
+
+% What follows is a new paragraph.
+% LaTeX knows this because we have left at least one blank line between it and the preceding paragraph.
+% LaTeX will thus indent the start of the following text:
+
+Now I would like to demonstrate some different type styles:
+\textrm{Roman}, \textit{Italic}, \textbf{Bold}, \textsl{Slanted}, \textsc{Small Caps},
+\texttt{Typewriter}, and \textsf{San Serif}.
+
+% The ''\emph'' command is not an italics command.
+% It instead stands for ''emphasis''. 
+% This will italicize text in most typical situations, but it can do other things depending on context.
+% The commands `''\textrm'', ''\textit'', etc. are more explicit ways of changing type styles.
+
+%Notice in the above sentence that even though the source file has a line break after the colon, the LaTeXed document does not.
+%To start a new line in the document without starting a new paragraph, put ''\\'' at the end of the line.
+
+
+Here is an example \\
+of a new line without starting a new paragraph.
+
+
+
+And now a list:
+\begin{itemize}
+	\item Canada
+	\item United States
+	\item Mexico
+\end{itemize}
+
+And another list:
+\begin{enumerate}
+	\item United Kingdom
+	\item China
+	\item Russia
+	\item France
+\end{enumerate}
+
+% The command ''itemize'' creates a list with bullets.
+%The command ''enumerate'' creates a numbered list.
+%Notice how LaTeX automatically does the numbering.
+%You can embed lists within lists.
+%The indentation above is not necessary, but it makes the lists easier to read in the source file.
+
+Finally, some examples of special characters:
+\begin{quote}
+We drove down La Ca\~{n}ada Drive to watch Wagnerian opera.
+The role of Br\"{u}nnhilde was played by Ren\'{e}e Gossens.
+Later we went to a restaurant called ``La Meurtri\`{e}re'' and were served r\^{o}ti by a rude gar\c{c}on.
+\end{quote}
+
+\section{Tables}
+
+Here is a one-inch space followed by a sample table:
+
+\vspace{1.0in}		% The ''\vspace'' command causes LaTeX to leave some vertical 
+				% space (in this case, 1 inch of space). You can use this command
+				% to leave space for illustrations or diagrams which are to be  
+				% pasted into the document manually, or simply to control spacing.
+				% Use this command sparingly. Let LaTeX do the spacing work for you.
+
+\begin{tabular}{|l|r|}	% The ''\begin{tabular}'' command begins a table. There is a 
+				% corresponding ''\end{tabular}'' command after the table. 
+				% The ''{|l|r|}'' after the ''\begin{tabular}'' command is, unfortunately,
+				% difficult to decipher here. It consists of the letters ''l'' (el) and ''r''
+				% and vertical bars in this order: bar, el, bar, r, bar. This indicates
+				% that the table will have two columns, the first one flushed left,
+				% the second one flushed right. (The letter ''c'' would indicate a 
+				% centered column.) The bars indicates that there will be vertical
+				% lines preceding and following each column.
+                                            
+\hline	% The command ''\hline'' indicates a horizontal line in the table.
+                                            
+\textbf{Original} & \textbf{Pig Latin} \\		% The start of each column after the first is 
+								% indicated by a ''&'' character. The end of 
+								% the row is indicated by typing ''\\''.
+\hline
+\hline
+Cat & Atcay \\
+Dog & Ogday \\
+Trash & Ashtray \\
+\hline
+\end{tabular}		% The end of the table.
+
+\section{And Now Some Mathematics}
+
+Mathematical expressions, like $x^{2} + 3$, are easy to create in \LaTeX.
+It is also easy to have a formula written on a separate line, like
+\[x^{2} + 3 = 0.\]
+
+% Mathematical expressions must be contained in a pair of single dollar signs ''$ ... $'' or ''\[ ... \]''.
+%A pair of single dollar signs keeps the math in the same line as the text.
+%To place the math centered, on its own line with larger symbols, surround it by ''\[''' and "\]".
+%This is called display style.
+
+\noindent Numbered equations are easy too!
+\begin{equation}
+x^{5} - 9x^{4} = \sin 3.
+\end{equation}
+You can also refer to previous equations.
+The formula
+\begin{equation}
+x = \frac{-b \pm \sqrt{b^{2} - 4ac}}{2a} \label{yourlabel}
+\end{equation}
+is the quadratic formula.
+You can use Equation \ref{yourlabel} to solve quadratic equations.
+
+% Notice that you can also place equations and formulas between the commands 
+% ''\begin{equation}'' and ''\end{equation}''. No dollar signs are necessary in this case. 
+
+% You can also create a label for the equation using the command ''\label''. You can 
+% refer back to the equation using the ''\ref'' command. Notice how LaTeX 
+% automatically takes care of the numbering. When you use the ''\ref'' command, you 
+% will need to run LaTeX on the source file twice. This is necessary so that LaTeX 
+% can keep track of the numbering. (Note that LaTeX will complain a little bit the first 
+% time you run the source file through. This is not serious.)
+
+Here is a formula with some simple mathematical operations:
+\[5 \times 3 + 4 \div 2 = 2 \cdot 10 - 3 < 100.\]
+Another simple formula:
+\[x^{2} \geq 0.\]			% The command ''\geq'' is ''greater than or equal'' and 
+					% ''\leq'' is ''less than or equal''.				
+This formula is true for $x \in \mathbb{R}$.	% The command ''\mathbb'' specifies 
+									% a certain type of math font. There are 
+									% also the ''\mathbf'' (bold) and the 
+									% ''\mathcal'' (calligraphic) commands, 
+									% among others, for specifying font styles 
+									% in math formulas.
+One more simple formula:
+\[0 \neq \frac{\pi}{2}.\]
+Some simple trigonometry:
+\[\sin(2x) = 2 \sin x \cos x.\]
+Some simple logarithms:
+\[\log(x) = \frac{\ln x}{\ln 10}.\]
+And now some Greek letters:
+\[\alpha + \beta = \gamma.\]
+A formula involving set notation:
+\[A \cup (B \cap C) = (A \cup B) \cap (A \cup C).\]
+The derivative:
+\[\lim_{h \rightarrow 0}\frac{f(x + h) - f(x)}{h} = f'(x).\]
+The Riemann sum
+\[\sum_{i = 1}^{n}f(x_{i})\Delta x\]
+approximates the integral
+\[\int_{a}^{b}f(x)\;dx.\]			% The characters ``\;'' just place some additional space 
+						% in the formula.
+Finally, an infinite series:
+\[1, \frac{1}{2}, \frac{1}{4}, \dots.\]
+
+\end{document}                          % This command indicates the end of the file.
