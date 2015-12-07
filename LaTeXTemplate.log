@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.10.27)  7 DEC 2015 00:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.10.27)  7 DEC 2015 00:33
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -300,7 +300,7 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 Package amsfonts Warning: Obsolete command \bold; \mathbf should be used instea
 d on input line 201.
 
-[2] [3] [4] [5] [6] (./LaTeXTemplate.aux)
+[2] [3] [4] [5] (./LaTeXTemplate.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
@@ -323,10 +323,10 @@ ocal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/loc
 al/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/
 texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/tex
 live/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on LaTeXTemplate.pdf (6 pages, 114527 bytes).
+Output written on LaTeXTemplate.pdf (5 pages, 113925 bytes).
 PDF statistics:
- 63 PDF objects out of 1000 (max. 8388607)
- 44 compressed objects within 1 object stream
+ 60 PDF objects out of 1000 (max. 8388607)
+ 42 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

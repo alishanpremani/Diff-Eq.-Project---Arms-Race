@@ -220,18 +220,16 @@ Note that the trace $Tr(M)\le0$ because of our assumptions that $c \ge 0$ and $d
 
 Our characteristic polynomial is $\lambda^2 + (d+c)\lambda + cd - ab$. We use Maple to compute the eigenvalues and eigenvectors, yielding
 	\begin{align}
-	\lambda_1 & = -\frac{1}{2}d - \frac{1}{2}c + \frac{1}{2}\sqrt{4ab -2cd + c^2 + d^2}, \quad \vec{v}_1 = 
+	\lambda_1 = -\frac{1}{2}d - \frac{1}{2}c + \frac{1}{2}\sqrt{4ab -2cd + c^2 + d^2}, \quad \vec{v}_1 = 
 	\begin{bmatrix}
 	\frac{a}{\lambda_1}\\
 	1
-	\end{bmatrix} 
-	\end{align} 
-	\begin{align} 
-	\lambda_2 & = -\frac{1}{2}d - \frac{1}{2}c - \frac{1}{2}\sqrt{4ab -2cd + c^2 + d^2}, \quad \vec{v}_2 = 
+	\end{bmatrix},\\
+	\lambda_2 = -\frac{1}{2}d - \frac{1}{2}c - \frac{1}{2}\sqrt{4ab -2cd + c^2 + d^2}, \quad \vec{v}_2 = 
 	\begin{bmatrix}
 	\frac{a}{\lambda_2}\\
 	1
-	\end{bmatrix}
+	\end{bmatrix}.
 	\end{align}	
 We now discuss the different possible cases which can occur during the arms race by using the above eigenvalues. 
 These cases are in terms of various combinations of rates of production and destruction of weaponry and potential relations between the two countries.
@@ -286,17 +284,17 @@ Again, we break this into further branches.
 The general solution for this case is 
 	\begin{align}
 	\bold{Y}(t) = e^{\lambda_r t}
-	\left( \begin{matrix}
+	\left[ \begin{matrix}
 	x_0 \\ y_0 
-	\end{matrix}\right)
+	\end{matrix}\right]
 	+ te^{\lambda_r t}
-	\left(\begin{matrix}
+	\left[\begin{matrix}
 	-c - \lambda_r & a \\
 	b & -d - \lambda_r 
-	\end{matrix}\right)
-	\left( \begin{matrix}
+	\end{matrix}\right]
+	\left[ \begin{matrix}
 	x_0 \\ y_0 
-	\end{matrix}\right),
+	\end{matrix}\right],
 	\end{align}
 where $x_0$ and $y_0$ are the initial conditions.	
 	
