@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  7 DEC 2015 13:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  7 DEC 2015 13:58
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**LaTeXTemplate.tex
-(./LaTeXTemplate.tex
+**Ledesma-Nguyen-Premani-MATH221-Project.tex
+(./Ledesma-Nguyen-Premani-MATH221-Project.tex
 LaTeX2e <2014/05/01>
 Babel <3.9k> and hyphenation patterns for 78 languages loaded.
 (/usr/local/texlive/2014/texmf-dist/tex/latex/base/article.cls
@@ -166,12 +166,8 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 \Gm@layoutvoffset=\dimen121
 \Gm@dimlist=\toks26
 )
-(./LaTeXTemplate.aux
-
-LaTeX Warning: Label `' multiply defined.
-
-)
-\openout1 = `LaTeXTemplate.aux'.
+No file Ledesma-Nguyen-Premani-MATH221-Project.aux.
+\openout1 = `Ledesma-Nguyen-Premani-MATH221-Project.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 142.
 LaTeX Font Info:    ... okay on input line 142.
@@ -185,7 +181,7 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 142.
 LaTeX Font Info:    ... okay on input line 142.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 142.
 LaTeX Font Info:    ... okay on input line 142.
- (/usr/local/texlive/2014/texmf-dist/tex/context/base/supp-pdf.mkii
+(/usr/local/texlive/2014/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count103
 \scratchdimen=\dimen122
@@ -297,6 +293,9 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 180.
  [2]
 
+LaTeX Warning: Reference `coldwar' on page 3 undefined on input line 211.
+
+
 Package amsfonts Warning: Obsolete command \bold; \mathbf should be used instea
 d on input line 229.
 
@@ -305,7 +304,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 245--250
 
  []
 
-[3] [4] [5]
+[3]
+
+LaTeX Warning: Reference `lambda' on page 4 undefined on input line 279.
+
+[4]
+
+LaTeX Warning: Reference `lambda' on page 5 undefined on input line 298.
+
+
+LaTeX Warning: Reference `lambda' on page 5 undefined on input line 301.
+
+[5]
 Underfull \hbox (badness 10000) in paragraph at lines 337--341
 
  []
@@ -372,19 +382,22 @@ Underfull \hbox (badness 2005) in paragraph at lines 359--360
  2015, from
  []
 
-[9] (./LaTeXTemplate.aux)
+[9] (./Ledesma-Nguyen-Premani-MATH221-Project.aux)
 
-LaTeX Warning: There were multiply-defined labels.
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 3008 strings out of 493117
- 40886 string characters out of 6135433
- 112109 words of memory out of 5000000
+ 3006 strings out of 493117
+ 41025 string characters out of 6135433
+ 111991 words of memory out of 5000000
  6421 multiletter control sequences out of 15000+600000
  13024 words of font info for 50 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,14n,26p,925b,194s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,14n,26p,950b,194s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 ></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb>
 </usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><
@@ -396,7 +409,8 @@ al/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/
 texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/tex
 live/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texl
 ive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on LaTeXTemplate.pdf (9 pages, 247787 bytes).
+Output written on Ledesma-Nguyen-Premani-MATH221-Project.pdf (9 pages, 248047 b
+ytes).
 PDF statistics:
  85 PDF objects out of 1000 (max. 8388607)
  56 compressed objects within 1 object stream
