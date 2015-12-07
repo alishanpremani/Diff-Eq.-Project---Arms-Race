@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  7 DEC 2015 00:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  7 DEC 2015 00:51
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -300,99 +300,100 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 Package amsfonts Warning: Obsolete command \bold; \mathbf should be used instea
 d on input line 201.
 
-[2] [3]
-Underfull \hbox (badness 10000) in paragraph at lines 261--265
+[2] [3] [4]
+Underfull \hbox (badness 10000) in paragraph at lines 310--314
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 261--265
+Underfull \hbox (badness 10000) in paragraph at lines 310--314
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 261--265
+Underfull \hbox (badness 10000) in paragraph at lines 310--314
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 261--265
+Underfull \hbox (badness 10000) in paragraph at lines 310--314
 
  []
 
-<warheads-table.png, id=21, 198.7425pt x 500.87125pt>
+<warheads-table.png, id=24, 198.7425pt x 500.87125pt>
 File: warheads-table.png Graphic file (type png)
  <use warheads-table.png>
-Package pdftex.def Info: warheads-table.png used on input line 266.
+Package pdftex.def Info: warheads-table.png used on input line 315.
 (pdftex.def)             Requested size: 140.92793pt x 355.17778pt.
 
-<warheads.png, id=23, 577.1964pt x 295.8252pt>
+<warheads.png, id=26, 577.1964pt x 295.8252pt>
 File: warheads.png Graphic file (type png)
  <use warheads.png>
-Package pdftex.def Info: warheads.png used on input line 267.
+Package pdftex.def Info: warheads.png used on input line 316.
 (pdftex.def)             Requested size: 375.80544pt x 192.60909pt.
- [4]
-Underfull \hbox (badness 10000) in paragraph at lines 269--271
+ [5]
+Underfull \hbox (badness 10000) in paragraph at lines 318--320
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 269--271
+Underfull \hbox (badness 10000) in paragraph at lines 318--320
 
  []
 
-[5 <./warheads-table.png> <./warheads.png>]
-<maplegraph.png, id=32, 401.5pt x 401.5pt>
+[6 <./warheads-table.png> <./warheads.png>]
+<maplegraph.png, id=36, 401.5pt x 401.5pt>
 File: maplegraph.png Graphic file (type png)
  <use maplegraph.png>
-Package pdftex.def Info: maplegraph.png used on input line 272.
+Package pdftex.def Info: maplegraph.png used on input line 321.
 (pdftex.def)             Requested size: 375.80544pt x 375.82944pt.
- [6 <./maplegraph.png>]
+ [7 <./maplegraph.png>]
 Missing character: There is no Ö in font cmr12!
 
-Underfull \hbox (badness 2057) in paragraph at lines 283--284
+Underfull \hbox (badness 2057) in paragraph at lines 332--333
 []\OT1/cmr/m/n/12 ``NRDC: Nu-clear Data - Ta-ble of US Nu-clear War-heads, 1945
 -2002." NRDC:
  []
 
 
-Underfull \hbox (badness 1845) in paragraph at lines 283--284
+Underfull \hbox (badness 1845) in paragraph at lines 332--333
 \OT1/cmr/m/n/12 Nu-clear Data - Ta-ble of US Nu-clear War-heads, 1945-2002. Nat
 -u-ral Re-sources
  []
 
 
-Underfull \hbox (badness 2005) in paragraph at lines 283--284
+Underfull \hbox (badness 2005) in paragraph at lines 332--333
 \OT1/cmr/m/n/12 De-fense Coun-cil (NRDC), 25 Nov. 2002. Web. Re-trieved 07 Dec.
  2015, from
  []
 
-[7] (./LaTeXTemplate.aux)
+[8] (./LaTeXTemplate.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 3003 strings out of 493117
- 40804 string characters out of 6135433
- 110068 words of memory out of 5000000
- 6416 multiletter control sequences out of 15000+600000
+ 3005 strings out of 493117
+ 40837 string characters out of 6135433
+ 111084 words of memory out of 5000000
+ 6418 multiletter control sequences out of 15000+600000
  13024 words of font info for 50 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,8n,26p,905b,192s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,14n,26p,924b,193s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 ></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb>
 </usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><
-/usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></u
-sr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr
-/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/l
-ocal/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/loca
-l/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/t
-exlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on LaTeXTemplate.pdf (7 pages, 222389 bytes).
+/usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></u
+sr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr
+/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/l
+ocal/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/loc
+al/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/
+texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/tex
+live/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on LaTeXTemplate.pdf (8 pages, 236225 bytes).
 PDF statistics:
- 71 PDF objects out of 1000 (max. 8388607)
- 46 compressed objects within 1 object stream
+ 78 PDF objects out of 1000 (max. 8388607)
+ 51 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  16 words of extra memory for PDF output out of 10000 (max. 10000000)
 
