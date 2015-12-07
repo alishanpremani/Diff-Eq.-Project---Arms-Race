@@ -118,11 +118,11 @@
  						% ''setspace.sty'' contained in the same folder as 
 						% the source file.
                                         
-\doublespacing			% The ''\doublespacing'' command is available only if
+%\doublespacing			% The ''\doublespacing'' command is available only if
 						% ''\usepackage{setspace}'' is in the document. This 
 						% causes the document to be double-spaced (surprise!).
                                         
-%\onehalfspacing			% Alternatively, one can use ''\onehalfspacing'' with 
+\onehalfspacing			% Alternatively, one can use ''\onehalfspacing'' with 
 						% the ''setspace'' package.
 
 % If you do not want to use the ''setspace'' package, you could use the command
@@ -169,7 +169,7 @@
 {\large \bfseries Introduction} % Major section
 \end{center}
 
-Every country is concerned about its national security. Maintaining an inventory of weaponry is one of the priorities in defense, but how a country does it depends on not only its own inventory, but also on other factors, such as technological advances, other countries's weaponry, and the tension among them. In this paper we seek to create a simple differential equations model to investigate the change in weaponry of two countries in relation to one another, and to improve our model by factoring another variable into our equations. Then we apply our model to the Cold War between the United States and the USSR where there was an arm race between the two countries. Due to limited time and resources, as well as techniques and skills in solving differential equations, our model has a lot of room for improvement, considering the number of variables not present in our equations.
+Every country is concerned about its national security. Maintaining an inventory of weaponry is one of the priorities in defense, but how a country does it depends on not only its own inventory, but also on other factors, such as technological advances, other countries' inventories of weaponry, and the tension between them. In this paper we seek to create a simple model of differential equations to investigate the change in weaponry of two countries in relation to one another, and to improve our model by factoring another variable into our equations. Then we apply our model to the Cold War between the United States and the USSR where there was an arm race between the two countries. Due to limited time and resources, as well as techniques and skills in solving differential equations, our model has a lot of room for improvement, considering the number of variables not present in our equations.
 
 \newpage
 
@@ -192,8 +192,8 @@ We restrict this model to a specific time interval in which $a$ and $b$ stay con
 Now we consider the situation where both countries decide to update their inventory of weaponry due to new technological advances and expired old weapons. 
 Therefore, we define additional parameters in the differential equations:
 \begin{align}
-\frac{dx}{dt} & = ay - cx \label{eq:changeInX} \\
-\frac{dy}{dt} & = bx - dy \label{eq:changeInY}
+\frac{dx}{dt} & = ay - cx \label{eq:changeInX}, \\
+\frac{dy}{dt} & = bx - dy \label{eq:changeInY},
 \end{align}	
 where $c \ge 0$ and $d \ge 0$ are constant coefficients of the destruction of old weapons in countries X and Y, respectively. \\
 We can solve this system of differential equations by constructing a coefficient matrix $M$ from equations \eqref{eq:changeInX} and \eqref{eq:changeInY} as follows
@@ -204,24 +204,21 @@ We can solve this system of differential equations by constructing a coefficient
  \end{bmatrix}
 = \begin{bmatrix}
     -c & a\\ 
-    b & d
+    b & -d
   \end{bmatrix}
   \begin{bmatrix}
     x \\ y
-  \end{bmatrix},
-  \]
-where $c \ge 0$ and $d \ge 0$ are constant coefficients of the destruction of expired weapons in countries X and Y, respectively. \\
-We can solve this system of differential equations by constructing a coefficient matrix:
-
-\[
-M=
+  \end{bmatrix}, \quad
+  M=
   \begin{bmatrix}
     -c & a\\ 
-    b & d
+    b & -d
   \end{bmatrix}.
-\]
-Our characteristic polynomial is $\lambda^2 + (d+c)\lambda + cd - ab$. Computing the eigenvalues and eigenvectors yields
+  \]
+where $c \ge 0$ and $d \ge 0$ are constant coefficients of the destruction of expired weapons in countries X and Y, respectively. 
+Note that the trace $Tr(M)\le0$ because of our assumptions that $c \ge 0$ and $d \ge 0$.
 
+Our characteristic polynomial is $\lambda^2 + (d+c)\lambda + cd - ab$. We use Maple to compute the eigenvalues and eigenvectors, yielding
 	\begin{align}
 	\lambda_1 & = -\frac{1}{2}d - \frac{1}{2}c + \frac{1}{2}\sqrt{4ab -2cd + c^2 + d^2}, \quad \vec{v}_1 = 
 	\begin{bmatrix}
@@ -235,35 +232,89 @@ Our characteristic polynomial is $\lambda^2 + (d+c)\lambda + cd - ab$. Computing
 	\frac{a}{\lambda_2}\\
 	1
 	\end{bmatrix}
-	\end{align}
+	\end{align}	
+We now discuss the different possible cases which can occur during the arms race by using the above eigenvalues. 
+These cases are in terms of various combinations of rates of production and destruction of weaponry and potential relations between the two countries.
 
-We now discuss the different possible cases which can occur during the arms race in terms by using the above eigenvalues.
+
 \subsection{Case 1 - Two Real Distinct Eigenvalues}
 
 We rewrite the equation for $\lambda$ as follows
 	\begin{align} \label{lambda}
-	\lambda & = -\frac{1}{2}(d + c) \pm \frac{1}{2}\sqrt{4ab -2cd + c^2 + d^2}
+	\lambda & = -\frac{1}{2}(d + c) \pm \frac{1}{2}\sqrt{4ab -2cd + c^2 + d^2}.
 	\end{align}
+Since $Tr(M) \le 0$, we have 
+	\begin{itemize}
+	\item a saddle when $Det(M) = cd-ab < 0$, implying that $cd<ab$. This is when one country has higher and lower production and destruction rates respectively than the other, leading it to win the race.
+	
+	\item a sink when $Det(M) = cd-ab > 0$, implying that $cd>ab$. This is when the product of both the countries' rates of destruction of weapons is greater than the product of their rates of production. 
+	This might happen when, for instance, both countries decide to either end the arms race for whatever reason, or shift the race to another advanced class of new weaponry.
+	
+	\end{itemize}
 To have two real distinct eigenvalues, we need the discriminant in equation \eqref{lambda} to be greater than zero
 	\begin{align} \label{discGreaterThanZero}
 	4ab -2cd + c^2 + d^2 & > 0,
 	\end{align}
 which implies that $4ab + c^2 + d^2 > 2cd$. 
 
-Note that $c^2 +d^2 > 2cd$ only when $c\ne d$. 
-
-	
+We break this down further into separate cases.
+	\begin{enumerate}
+ 		\item The first sub-case is where $c = d$, which gives us $4ab > 0$. This implies that $a \ne 0$ and $b \ne 0$ for the inequality to hold true. Therefore, when both countries destroy their own arms at equal rates, they both must have non-zero production rates for arms. This is because we assume both countries to be competing to have more arms than the other. So if both countries destroy their weapons at equal rates, then these countries must produce at least some weapons in order to stay competitive.
+		\item The second sub-case is where $c \ne d$ (both countries destroy their weapons at different rates), which implies that $c^2 + d^2 > 2cd$. Thus, it must hold true that $a\ge 0$ and $b \ge 0$, which is our assumption. We can infer that in this case, we can expect both countries' rates of production to be flexible in that either one or both of them may not be producing any weapons at any given time. Since it must be true that one of the countries rates of destruction is less than the others' when $c \ne d$, then that country would not be as worried as the other country to produce more weapons to stay competitive.
+	\end{enumerate}
+The general solution for this case is 
+	\begin{align}
+	\bold{Y}(t) = k_1 e^{\lambda_1 t}\vec{v}_1 + k_2 e^{\lambda_2 t}\vec{v}_2,
+	\end{align}
+where $k_1$ and $k_2$ are constants.
 
 \subsection{Case 2 - Repeated Eigenvalues}
-\subsection{Case 2 - Complex Eigenvalues}
 
+To have repeated eigenvalues, we must have our eigenvalue be in the form $\lambda_r = -\frac{1}{2}(d + c)$ from equation \eqref{lambda}. Note that we can have only non-positive repeated eigenvalues since $a\ge0$ and $b\ge0$.
+We can only have a sink, where both countries tend to have a net decrease in the amount of weaponry they possess.
 
+The discriminant in equation \eqref{lambda} must be equal to zero
+	\begin{align} \label{disEqualToZero}
+	4ab -2cd + c^2 + d^2 & = 0,
+	\end{align}
+which implies that $4ab + c^2 + d^2 = 2cd$. 
+Again, we break this into further branches.
+	\begin{enumerate}
+ 		\item The first case is where $c = d$, which implies that $c^2 + d^2 = 2cd$. Thus at least one of $a$ and $b$ must be zero, which means that at least one country's production must be zero. Since both countries have a net decrease in the amount of weaponry they have, it is logical to predict at least one country to not produce any weaponry at all.
+		\item The second sub-case where either $c = 0$ or $d = 0$ but not both, since $c \ne d$. For example, if $c = 0$, then $4ab = -d^2$, which is not possible because of our assumptions. Therefore, it is not possible to have this case because both countries must have a non-zero rate of destruction, since there is a net decrease in their respective amounts of weaponry, as noted earlier.
+	\end{enumerate}
+The general solution for this case is 
+	\begin{align}
+	\bold{Y}(t) = e^{\lambda_r t}
+	\left( \begin{matrix}
+	x_0 \\ y_0 
+	\end{matrix}\right)
+	+ te^{\lambda_r t}
+	\left(\begin{matrix}
+	-c - \lambda_r & a \\
+	b & -d - \lambda_r 
+	\end{matrix}\right)
+	\left( \begin{matrix}
+	x_0 \\ y_0 
+	\end{matrix}\right),
+	\end{align}
+where $x_0$ and $y_0$ are the initial conditions.	
+	
+\subsection{Case 3 - Complex Eigenvalues}
 
+For complex eigenvalues to occur, we must have the discriminant to be less than zero
+	\begin{align} \label{disLessThanZero}
+	4ab -2cd + c^2 + d^2 < 0,
+	\end{align}
+implying that $4ab + c^2 + d^2 < 2cd$. However, due to our assumptions that $b \ge 0$ and $c \ge 0$, this can never occur. This is because $c^2 + d^2 < 2cd$ and $4ab > 0$ for values greater than or equal to zero for each.
 
 \section{Case Study: Cold War}
 We consider the arm race between the United States and the USSR during the Cold War. Due to limited time and resources, we define the term ``weaponry" in this case to only include nuclear warheads. We also exclude other external factors such as internal political conflicts in each country, current wars at the time, and treaties, that would effect the production rate of weaponry in each country.
 
-
+\begin{thebibliography}{9}
+\bibitem{}
+\bibitem{}
+\end{thebibliography}
 \section{Reference}
 %https://lupucezar.files.wordpress.com/2011/02/yuan.pdf
 
