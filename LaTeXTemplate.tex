@@ -145,7 +145,7 @@
 
 % Next we'll give basic titling information to LaTeX:
 
-\title{MODELING THE ARMS RACE}		% The title of the document.
+\title{MODELING AN ARMS RACE}		% The title of the document.
 								% The ~ symbol forces a space; try removing it to see 
 								% what happens.
 
@@ -169,7 +169,7 @@
 {\large \bfseries Introduction} % Major section
 \end{center}
 
-Every country is concerned about its national security. Maintaining an inventory of weaponry is one of the priorities in defense, but how a country does it depends on not only its own inventory, but also on other factors, such as technological advances, other countries' inventories of weaponry, and the tension between them. In this paper we seek to create a simple model of differential equations to investigate the change in weaponry of two countries in relation to one another, and to improve our model by factoring another variable into our equations. Then we apply our model to the Cold War between the United States and the USSR where there was an arm race between the two countries. Due to limited time and resources, as well as techniques and skills in solving differential equations, our model has a lot of room for improvement, considering the number of variables not present in our equations.
+Every country is concerned about its national security. Maintaining an inventory of weaponry is one of the priorities in defense, but how a country does it depends on not only its own inventory, but also on other factors, such as technological advances, other countries' inventories of weaponry, and the tension between them. In this paper we seek to create a simple model of differential equations to investigate the change in weaponry of two countries in relation to one another, and to improve our model by factoring another variable into our equations. Then we apply our model to the Cold War between the United States and the USSR where there was an arms race between the two countries. Due to limited time and resources, as well as techniques and skills in solving differential equations, our model has a lot of room for improvement, considering the number of variables not present in our equations.
 
 \newpage
 
@@ -185,7 +185,35 @@ We define the following variables:
 We restrict this model to a specific time interval in which $a$ and $b$ stay constant, even though in a real-world situation, the production rates might fluctuate.
 
 %JONATHAN LEDESMA
-\section{Simple Model}		
+\section{Simple Model}	
+The simple model looks at the production of weaponry for each country solely dependent on the other country's amount of weapons. Without considering other factors, a country will only look at the other country's rate of production and number of weapons at time $t$. The simple model can be defined as:
+$$\begin{cases}
+\frac{dx}{dt} = & ay \label{eq:changeInsimpleX} \\
+\frac{dy}{dt} = & bx \label{eq:changeInsimpleY}.
+\end{cases}$$
+In this model $a$ and $b$ are the rates of production and both $x$ and $y$ are the amount of weapons the other country holds. From this system of equations we create the matrix, 
+\[\begin{bmatrix}
+    0 & a\\ 
+    b & 0
+\end{bmatrix}.\]
+From this matrix we obtain the characteristic polynomial and our eigenvalues, 
+\begin{align}
+\lambda=\pm \sqrt{ab}.
+\end{align}
+Thus we get the general solution for $y$, 
+\begin{align}
+{y}(t)=k_1e^{\sqrt{ab}t}+k_2e^{-\sqrt{ab}t}.
+\end{align}
+Finally plugging in our general solution for $y$ into $\frac{dx}{dt}$ we obtain the general solution for $x$,
+ \begin{align}
+{x}(t)=\sqrt{\frac{a}{b}}(k_1e^{\sqrt{ab}t}-k_2e^{-\sqrt{ab}t}).
+\end{align}
+We now plug in the initial conditions $x(0)=235$ and $y(0)=1$ with rates of production $a=\frac{10}{23}$ and $b=\frac{14}{25}$. Section \ref{coldwar} will explain the choice of this particular initial condition and these parameters. Solving for the constants $k_1$ and $k_2$, we get $k_1\approx104$ and $k_2\approx-103$. Thus the solution for this initial value problem is:
+$$\begin{cases}
+{x}(t)=\sqrt{\frac{125}{161}}(104e^{\sqrt{\frac{28}{115}}t}+103e^{-\sqrt{\frac{28}{115}}t})\\
+{y}(t)=104e^{\sqrt{\frac{28}{115}}t}-103e^{-\sqrt{\frac{28}{115}}t}.
+\end{cases}$$
+In the next section, we observe a model that accounts for more factors. 	
 
 %Alishan
 \section{A More Realistic Model}
@@ -195,8 +223,8 @@ $$\begin{cases}
 \frac{dx}{dt} = & ay - cx \label{eq:changeInX} \\
 \frac{dy}{dt} = & bx - dy \label{eq:changeInY}	
 \end{cases}$$
-where $c \ge 0$ and $d \ge 0$ are constant coefficients of the destruction of old weapons in countries X and Y, respectively.  Our equilibrium solution is (0,0), when both the countries' amounts of weaponry are zero. \\
-We can solve this system of differential equations by constructing a coefficient matrix $M$ from equations \eqref{eq:changeInX} and \eqref{eq:changeInY} as follows
+where $c \ge 0$ and $d \ge 0$ are constant coefficients of the destruction of old weapons in countries X and Y, respectively.  \\
+We can solve this system of differential equations by constructing a coefficient matrix $M$ as follows
 \[
 \bold{Y}(t) = 
  \begin{bmatrix}
@@ -216,9 +244,9 @@ We can solve this system of differential equations by constructing a coefficient
   \end{bmatrix}.
   \]
 where $c \ge 0$ and $d \ge 0$ are constant coefficients of the destruction of expired weapons in countries X and Y, respectively.
-Note that the trace $Tr(M)\le0$ because of our assumptions that $c \ge 0$ and $d \ge 0$.
-
-Our characteristic polynomial is $\lambda^2 + (d+c)\lambda + cd - ab$. We use Maple to compute the eigenvalues and eigenvectors, yielding
+Our equilibrium solution is (0,0), when both the countries' amounts of weaponry are zero. When $Det(M) = cd - ab$, we have infinitely many equilibrium points along a straight line. 
+Note that the trace $Tr(M)\le0$ because of our assumptions that $c \ge 0$ and $d \ge 0$.\\
+\\Our characteristic polynomial is $\lambda^2 + (d+c)\lambda + cd - ab$. We use Maple to compute the eigenvalues and eigenvectors, yielding
 	\begin{align}
 	\lambda_1 = -\frac{1}{2}d - \frac{1}{2}c + \frac{1}{2}\sqrt{4ab -2cd + c^2 + d^2}, \quad \vec{v}_1 = 
 	\begin{bmatrix}
@@ -231,8 +259,7 @@ Our characteristic polynomial is $\lambda^2 + (d+c)\lambda + cd - ab$. We use Ma
 	1
 	\end{bmatrix}.
 	\end{align}	
-We now discuss the different possible cases which can occur during the arms race by using the above eigenvalues. 
-These cases are in terms of various combinations of rates of production and destruction of weaponry and potential relations between the two countries.
+We now discuss the different possible cases which can occur during the arms race by using the above eigenvalues and eigenvectors. These cases are in terms of various combinations of rates of production and destruction of weaponry and potential relations between the two countries.
 
 
 \subsection{Case 1 - Two Real Distinct Eigenvalues}
@@ -264,7 +291,7 @@ The general solution for this case is
 	\begin{align}
 	\bold{Y}(t) = k_1 e^{\lambda_1 t}\vec{v}_1 + k_2 e^{\lambda_2 t}\vec{v}_2,
 	\end{align}
-where $k_1$ and $k_2$ are constants.
+where $k_1$ and $k_2$ are constants depending on the initial condition.
 
 \subsection{Case 2 - Repeated Eigenvalues}
 
@@ -304,10 +331,10 @@ For complex eigenvalues to occur, we must have the discriminant to be less than 
 	\begin{align} \label{disLessThanZero}
 	4ab -2cd + c^2 + d^2 < 0,
 	\end{align}
-implying that $4ab + c^2 + d^2 < 2cd$. However, due to our assumptions that $b \ge 0$ and $c \ge 0$, this can never occur. This is because $c^2 + d^2 < 2cd$ and $4ab > 0$ for values greater than or equal to zero for each.
+implying that $4ab + (c - d)^2 < 0$. However, due to our assumptions that $a, b, c, d \ge 0$, this can never occur. 
 
-\section{Case Study: Cold War}
-We consider the arm race between the United States and the USSR during the Cold War between 1949 and 1979. Due to limited time and resources, we define the term ``weaponry" in this case to only include nuclear warheads. We also exclude other external factors such as internal political conflicts in each country, current wars at the time, and treaties, that would effect the production and destruction rates of weaponry in each country.\\
+\section{Case Study: Cold War}\label{coldwar}
+We consider the arms race between the United States and the USSR during the Cold War between 1949 and 1979. Due to limited time and resources, we define the term ``weaponry" in this case to only include nuclear warheads. We also exclude other external factors such as internal political conflicts in each country, current wars at the time, and treaties, that would effect the production and destruction rates of weaponry in each country.\\
 \\Let the United States be our country X and the USSR be our country Y in the above models. Then $x(t)$ represents the amount of warheads the United States had and $y(t)$ represents the amount of warheads the USSR had.\\
 \\The number of stockpiled warheads of the United States and the USSR in this period of time is given and illustrated by the following table and graph:\\
 \\
@@ -315,7 +342,7 @@ We consider the arm race between the United States and the USSR during the Cold 
 \includegraphics[width=0.3\linewidth]{warheads-table}
 \includegraphics[width=0.8\linewidth]{warheads}
 \end{center}
-Through a lot of trial-and-error, we find that $a = 10/23$, $b=14/25$, $c=11/25$, and $d = 5/25$ give the best approximation of $x(t)$ and $y(t)$ given the actual data. The graphs of theoretical $x(t)$ and $y(t)$ versus $t$ is below, where the red curve is $x(t)$ for the United States, the blue curve is $y(t)$ for the USSR, and the initial condition is $x(0) = 235$ and $y(0) = 1$:\\
+Through a lot of trial-and-error, we find that $a = 10/23$, $b=14/25$, $c=11/25$, and $d = 1/5$ give the best approximation of $x(t)$ and $y(t)$ given the actual data. The graphs of theoretical $x(t)$ and $y(t)$ versus $t$ are below, where the red curve is $x(t)$ for the United States, the blue curve is $y(t)$ for the USSR, and the initial condition is $x(0) = 235$ and $y(0) = 1$:\\
 \\
 \begin{center}
 \includegraphics[width=0.8\linewidth]{maplegraph}
@@ -323,7 +350,7 @@ Through a lot of trial-and-error, we find that $a = 10/23$, $b=14/25$, $c=11/25$
 The shape of the actual and theoretical graphs are relatively similar for $y(t)$, but there are definitely some discrepancies for $x(t)$. The gap between theoretical predictions and actual data is understandable because our model only considers the change depending on the two countries' inventories of warheads, while in the real world the number of warheads can also change because of wars, resources, policies, treaties, and so forth.
 
 \section{Conclusion}
-In this paper we consider the change in weaponry inventory of two countries when they are in an arms race, which makes the amount of weaponry that one country has influence the amount that the other has. We also build slightly more realistic model where each country gets rid of a portion of its current weapon inventory. The model does not do very well when compared with actual data from the Cold War because there are so many other factors in the Cold War not considered in our model. We need more time and resources to address these variables to improve our model.
+In this paper we consider the change in weaponry inventory of two countries when they are in an arms race, which makes the amount of weaponry that one country has influence the amount that the other has. We also build slightly more realistic model where each country gets rid of a portion of its current weapon inventory. The model does not do very well when compared with actual data from the Cold War because there are so many other factors in the Cold War not considered in our model. We need more time and resources to address these issues in our model.
 
 \begin{thebibliography}{9}
 \bibitem{realLife}
