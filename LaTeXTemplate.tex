@@ -191,10 +191,10 @@ We restrict this model to a specific time interval in which $a$ and $b$ stay con
 \section{A More Realistic Model}
 Now we consider the situation where both countries decide to update their inventory of weaponry due to new technological advances and expired old weapons. 
 Therefore, we define additional parameters in the differential equations:
-\begin{align}
-\frac{dx}{dt} & = ay - cx \label{eq:changeInX} \\
-\frac{dy}{dt} & = bx - dy \label{eq:changeInY}
-\end{align}	
+$$\begin{cases}
+\frac{dx}{dt} = & ay - cx \label{eq:changeInX} \\
+\frac{dy}{dt} = & bx - dy \label{eq:changeInY}	
+\end{cases}$$
 where $c \ge 0$ and $d \ge 0$ are constant coefficients of the destruction of old weapons in countries X and Y, respectively. \\
 We can solve this system of differential equations by constructing a coefficient matrix $M$ from equations \eqref{eq:changeInX} and \eqref{eq:changeInY} as follows
 \[
@@ -258,10 +258,30 @@ Note that $c^2 +d^2 > 2cd$ only when $c\ne d$.
 
 
 \section{Case Study: Cold War}
-We consider the arm race between the United States and the USSR during the Cold War. Due to limited time and resources, we define the term ``weaponry" in this case to only include nuclear warheads. We also exclude other external factors such as internal political conflicts in each country, current wars at the time, and treaties, that would effect the production rate of weaponry in each country.
+We consider the arm race between the United States and the USSR during the Cold War between 1949 and 1979. Due to limited time and resources, we define the term ``weaponry" in this case to only include nuclear warheads. We also exclude other external factors such as internal political conflicts in each country, current wars at the time, and treaties, that would effect the production and destruction rates of weaponry in each country.\\
+\\Let the United States be our country X and the USSR be our country Y in the above models. Then $x(t)$ represents the amount of warheads the United States had and $y(t)$ represents the amount of warheads the USSR had.\\
+\\The number of stockpiled warheads of the United States and the USSR in this period of time is given and illustrated by the following table and graph:\\
+\\
+\begin{center}
+\includegraphics[width=0.3\linewidth]{warheads-table}
+\includegraphics[width=0.8\linewidth]{warheads}
+\end{center}
+Through a lot of trial-and-error, we find that $a = 10/23$, $b=14/25$, $c=11/25$, and $d = 5/25$ give the best approximation of $x(t)$ and $y(t)$ given the actual data. The graphs of theoretical $x(t)$ and $y(t)$ versus $t$ is below, where the red curve is $x(t)$ for the United States, the blue curve is $y(t)$ for the USSR, and the initial condition is $x(0) = 235$ and $y(0) = 1$:\\
+\\
+\begin{center}
+\includegraphics[width=0.8\linewidth]{maplegraph}
+\end{center}
+The shape of the actual and theoretical graphs are relatively similar for $y(t)$, but there are definitely some discrepancies for $x(t)$. The gap between theoretical predictions and actual data is understandable because our model only considers the change depending on the two countries' inventories of warheads, while in the real world the number of warheads can also change because of wars, resources, policies, treaties, and so forth.
+
+\section{Conclusion}
+In this paper we consider the change in weaponry inventory of two countries when they are in an arms race, which makes the amount of weaponry that one country has influence the amount that the other has. We also build slightly more realistic model where each country gets rid of a portion of its current weapon inventory. The model does not do very well when compared with actual data from the Cold War because there are so many other factors in the Cold War not considered in our model. We need more time and resources to address these variables to improve our model.
+
+\begin{thebibliography}{9}\bibitem{realLife}
+Yuan, Y., Joubert, S., \& Gai, Y. (2000). Real-life Applications of ODEs for Undergraduates. Mathematics Subject Classi÷cation. Retrieved December 7, 2015, from https://lupucezar.files.wordpress.com/2011/02/yuan.pdf\bibitem{}
+``NRDC: Nuclear Data - Table of US Nuclear Warheads, 1945-2002." NRDC: Nuclear Data - Table of US Nuclear Warheads, 1945-2002. Natural Resources Defense Council (NRDC), 25 Nov. 2002. Web. Retrieved 07 Dec. 2015, from http://www.nrdc.org/nuclear/nudb/datab9.asp.
+\bibitem{}
+``NRDC: Nuclear Data - Table of USSR/Russian Nuclear Warheads, 1949-2002." NRDC: Nuclear Data - Table of USSR/Russian Nuclear Warheads, 1949-2002. Natural Resources Defense Council (NRDC), 25 Nov. 2002. Web. Retrieved 07 Dec. 2015, from http://www.nrdc.org/nuclear/nudb/datab10.asp.\end{thebibliography}
 
 
-\section{Reference}
-%https://lupucezar.files.wordpress.com/2011/02/yuan.pdf
 
 \end{document}                          % This command indicates the end of the file.
